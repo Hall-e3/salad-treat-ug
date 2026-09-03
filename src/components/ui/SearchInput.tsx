@@ -1,6 +1,6 @@
 import React from "react";
 import TextInput from "./TextInput";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 interface SearchInputProps {
   value: string;
@@ -24,7 +24,16 @@ export default function SearchInput({
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
       leftIcon={<MagnifyingGlassIcon className="h-5 w-5" />}
+      rightIcon={
+        value ? (
+          <span className="flex items-center justify-center rounded-full bg-zest p-1 text-basil transition-colors hover:bg-zest-deep shadow-xs cursor-pointer">
+            <XMarkIcon className="h-3.5 w-3.5 stroke-[2.5]" />
+          </span>
+        ) : undefined
+      }
+      onRightIconClick={() => onChange("")}
       className={className}
+      inputClassName="[&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none"
       darkMode={darkMode}
     />
   );

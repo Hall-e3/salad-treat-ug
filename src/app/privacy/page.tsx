@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import HeaderNav from "@/components/layout/HeaderNav";
 import Footer from "@/components/layout/Footer";
 import CartDrawerModal from "@/components/modals/CartDrawerModal";
-import { ShieldCheckIcon, LockClosedIcon } from "@heroicons/react/24/outline";
+import { ShieldCheckIcon, LockClosedIcon, PhoneIcon, EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/outline";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Salad Treat Kampala",
@@ -94,10 +94,19 @@ export default function PrivacyPage() {
               <p>
                 If you wish to update, correct, or delete your customer records from our system, please contact us:
               </p>
-              <div className="mt-3 p-4 rounded-2xl bg-bone/50 border border-line text-xs font-semibold text-charcoal space-y-1">
-                <p>📞 Phone: 0752 182 379 / 0775 980 728</p>
-                <p>✉️ Email: saladtreat256@gmail.com</p>
-                <p>📍 Location: Kampala, Uganda</p>
+              <div className="mt-3 p-4 rounded-2xl bg-bone/50 border border-line text-xs font-semibold text-charcoal space-y-2">
+                <div className="flex items-center gap-2">
+                  <PhoneIcon className="h-4 w-4 text-zest-deep shrink-0" />
+                  <span>Direct Phone: 0752 182 379 / 0775 980 728</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <EnvelopeIcon className="h-4 w-4 text-zest-deep shrink-0" />
+                  <span>Email: saladtreat256@gmail.com</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPinIcon className="h-4 w-4 text-zest-deep shrink-0" />
+                  <span>Location: Kampala, Uganda</span>
+                </div>
               </div>
             </div>
           </div>

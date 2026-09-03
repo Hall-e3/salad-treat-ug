@@ -9,9 +9,9 @@ import {
   Bars3Icon,
   XMarkIcon,
   ChevronDownIcon,
-  CheckCircleIcon,
+  CalendarDaysIcon,
+  CheckBadgeIcon,
   TruckIcon,
-  SparklesIcon as StarIcon,
   AdjustmentsHorizontalIcon,
 } from "@heroicons/react/24/outline";
 
@@ -20,13 +20,13 @@ const dropdownMenu = [
     title: "Meal Subscription Plans",
     desc: "Weekly (6-day) & Monthly (24-day) healthy plans",
     href: "/#menu",
-    icon: <SparklesIcon className="h-5 w-5 text-zest" />,
+    icon: <CalendarDaysIcon className="h-5 w-5 text-zest" />,
   },
   {
     title: "Signature Salad Bowls",
     desc: "Chef-crafted high-protein & keto bowls",
     href: "/#bowls",
-    icon: <StarIcon className="h-5 w-5 text-zest" />,
+    icon: <SparklesIcon className="h-5 w-5 text-zest" />,
   },
   {
     title: "Custom Bowl Builder",
@@ -38,7 +38,7 @@ const dropdownMenu = [
     title: "Fresh Local Ingredients",
     desc: "100% farm-fresh crisp greens, proteins & dressings",
     href: "/#ingredients",
-    icon: <CheckCircleIcon className="h-5 w-5 text-zest" />,
+    icon: <CheckBadgeIcon className="h-5 w-5 text-zest" />,
   },
   {
     title: "Kampala Delivery Estimator",

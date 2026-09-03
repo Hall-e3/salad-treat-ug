@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { LeafSprig, CherryTomatoes } from "@/components/Botanical";
+import { CherryTomatoes } from "@/components/Botanical";
 import { Button, AppText } from "@/components/ui";
 import {
   SparklesIcon,
@@ -18,9 +18,6 @@ export default function HeroSection() {
       <HeroVideoSlideshow />
 
       {/* Background Decorative Art */}
-      <div className="pointer-events-none absolute -left-6 top-16 hidden h-56 w-32 text-[#3c5a45] opacity-70 md:block md:h-72 md:w-40">
-        <LeafSprig className="h-full w-full" />
-      </div>
       <div className="pointer-events-none absolute right-6 top-8 h-16 w-24 text-zest/70 md:right-16 md:h-20 md:w-28">
         <CherryTomatoes className="h-full w-full" />
       </div>

@@ -23,10 +23,10 @@ export function HiringBanner() {
               <span className="text-xs text-bone/60">Salad Treat Team</span>
             </div>
             <h4 className="font-display text-base sm:text-lg text-bone mt-0.5">
-              Open Positions: <span className="text-zest">Female Rider</span> &amp; <span className="text-zest">Customer Care (Call Centre)</span>
+              Open Positions: <span className="text-zest">Delivery Rider</span> &amp; <span className="text-zest">Call Center Agent</span>
             </h4>
             <p className="text-xs text-bone/70">
-              Min. 1 year experience in delivery / customer service. Submit CV to{" "}
+              Min. 1 year experience in delivery or call center operations. Submit CV to{" "}
               <a href="mailto:saladtreat256@gmail.com" className="text-zest underline hover:text-white font-bold">
                 saladtreat256@gmail.com
               </a>
