@@ -79,6 +79,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   alternates: {
     canonical: "https://saladtreat.ug",
   },

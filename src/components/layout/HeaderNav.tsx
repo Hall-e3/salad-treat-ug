@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { useCart } from "@/lib/cart";
 import { Button } from "@/components/ui";
@@ -57,7 +58,10 @@ export default function HeaderNav() {
   // Close dropdown on outside click
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setDropdownOpen(false);
       }
     }
@@ -81,9 +85,16 @@ export default function HeaderNav() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a
             href="/#top"
-            className="flex items-center gap-2 font-display text-2xl italic tracking-wide text-bone group cursor-pointer"
+            className="flex items-center gap-2.5 font-display text-2xl italic tracking-wide text-bone group cursor-pointer"
           >
-            <SparklesIcon className="h-6 w-6 text-zest transition-transform group-hover:rotate-12" />
+            <Image
+              src="/logo.png"
+              alt="Salad Treat Logo"
+              width={36}
+              height={36}
+              className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
+              priority
+            />
             <span>Salad Treat</span>
           </a>
 
@@ -132,13 +143,22 @@ export default function HeaderNav() {
               )}
             </div>
 
-            <a href="/#faq" className="transition-colors hover:text-zest cursor-pointer">
+            <a
+              href="/#faq"
+              className="transition-colors hover:text-zest cursor-pointer"
+            >
               FAQs
             </a>
-            <a href="/terms" className="transition-colors hover:text-zest cursor-pointer">
+            <a
+              href="/terms"
+              className="transition-colors hover:text-zest cursor-pointer"
+            >
               Terms
             </a>
-            <a href="/privacy" className="transition-colors hover:text-zest cursor-pointer">
+            <a
+              href="/privacy"
+              className="transition-colors hover:text-zest cursor-pointer"
+            >
               Privacy
             </a>
           </nav>

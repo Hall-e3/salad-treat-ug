@@ -1,4 +1,5 @@
-import { SparklesIcon, MapPinIcon, PhoneIcon, ClockIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
+import { MapPinIcon, PhoneIcon, ClockIcon } from "@heroicons/react/24/outline";
 import AppText from "@/components/ui/AppText";
 
 export default function Footer() {
@@ -6,8 +7,14 @@ export default function Footer() {
     <footer className="bg-basil-deep text-bone py-16 border-t border-bone/10">
       <div className="mx-auto max-w-6xl px-6 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-2 space-y-4">
-          <div className="flex items-center gap-2 font-display text-2xl italic tracking-wide text-bone">
-            <SparklesIcon className="h-6 w-6 text-zest" />
+          <div className="flex items-center gap-2.5 font-display text-2xl italic tracking-wide text-bone">
+            <Image
+              src="/logo.png"
+              alt="Salad Treat Logo"
+              width={40}
+              height={40}
+              className="h-10 w-auto object-contain"
+            />
             <span>Salad Treat</span>
           </div>
           <AppText variant="body-sm" color="inverse" className="opacity-70 max-w-sm leading-relaxed">

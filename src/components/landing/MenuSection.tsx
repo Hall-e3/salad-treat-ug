@@ -14,14 +14,13 @@ import { SearchInput, Tab, AppText } from "@/components/ui";
 import CustomBowlSection from "@/components/landing/CustomBowlSection";
 
 export default function MenuSection() {
-  const [activeCategory, setActiveCategory] = useState<Category>("all");
+  const [activeCategory, setActiveCategory] = useState<Category>("plans");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedModalItem, setSelectedModalItem] = useState<MenuItem | null>(
     null,
   );
 
   const tabs = [
-    { id: "all", label: "All Offerings" },
     { id: "plans", label: "Meal Subscription Plans" },
     { id: "bowls", label: "Signature Salad Bowls" },
     { id: "custom", label: "Custom Bowl Builder" },
