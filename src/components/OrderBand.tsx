@@ -35,17 +35,20 @@ export function OrderBand() {
   return (
     <section id="order" className="relative overflow-hidden bg-basil-deep">
       {/* Visual Header Image Banner */}
-      <div className="relative h-[420px] w-full md:h-[480px]">
+      <div className="relative h-[440px] w-full md:h-[500px] bg-basil-deep">
         <Image
           src="/photos/delivery-rider.png"
           alt="A Salad Treat delivery rider ready to head out with a fresh order in Kampala"
           fill
           sizes="100vw"
-          className="object-cover opacity-60"
+          className="object-cover opacity-90 transition-opacity duration-300"
+          priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-basil-deep via-basil-deep/60 to-basil-deep/20" />
+        {/* Soft vignette gradient so text stays readable while keeping the delivery guy sharp and clear */}
+        <div className="absolute inset-0 bg-gradient-to-t from-basil-deep via-basil-deep/50 to-basil-deep/15" />
+        <div className="absolute inset-0 bg-black/25" />
 
-          <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 text-center text-bone">
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 text-center text-bone">
             <span className="font-display text-base sm:text-lg italic text-zest">
               Safe, Timely, To Your Doorstep
             </span>
