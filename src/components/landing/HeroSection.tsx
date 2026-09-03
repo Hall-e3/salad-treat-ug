@@ -12,6 +12,19 @@ import {
 export default function HeroSection() {
   return (
     <section id="top" className="relative overflow-hidden bg-basil text-bone">
+      {/* Background Video Player (Supports /videos/hero.mp4 or /videos/salad-prep.mp4) */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-25 mix-blend-overlay"
+        poster="/photos/delivery-rider.png"
+      >
+        <source src="/videos/hero.mp4" type="video/mp4" />
+        <source src="/videos/salad-prep.mp4" type="video/mp4" />
+      </video>
+
       {/* Background Decorative Art */}
       <div className="pointer-events-none absolute -left-6 top-16 hidden h-56 w-32 text-[#3c5a45] opacity-70 md:block md:h-72 md:w-40">
         <LeafSprig className="h-full w-full" />

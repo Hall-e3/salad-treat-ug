@@ -34,7 +34,7 @@ export default function Footer() {
 
         <div className="space-y-3">
           <AppText variant="label-lg" color="zest" transform="uppercase" className="font-bold">
-            Delivery & Support
+            Delivery &amp; Contact
           </AppText>
           <AppText variant="body-sm" color="inverse" className="opacity-80 flex items-center gap-2">
             <MapPinIcon className="h-4 w-4 text-zest shrink-0" />
@@ -48,8 +48,35 @@ export default function Footer() {
             <ClockIcon className="h-4 w-4 text-zest shrink-0" />
             <span>Mon &ndash; Sat: 8:00 AM &ndash; 5:00 PM</span>
           </AppText>
-          <div className="pt-2 text-xs text-bone/50">
-            Follow us on Instagram & TikTok @saladtreat
+
+          {/* Social Links */}
+          <div className="pt-3 space-y-2 border-t border-bone/10">
+            <AppText variant="label-sm" color="zest" transform="uppercase" className="font-bold text-[10px]">
+              Social Media &amp; Community
+            </AppText>
+
+            <div className="flex flex-wrap gap-2">
+              <a
+                href="https://www.tiktok.com/@salad.treat.ug"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full bg-bone/10 px-3 py-1 text-xs font-bold text-bone hover:bg-zest hover:text-basil transition-colors cursor-pointer"
+              >
+                <span>TikTok (10.2K)</span>
+              </a>
+              <a
+                href="https://www.instagram.com/salad_treat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full bg-bone/10 px-3 py-1 text-xs font-bold text-bone hover:bg-zest hover:text-basil transition-colors cursor-pointer"
+              >
+                <span>Instagram @salad_treat</span>
+              </a>
+            </div>
+
+            <p className="text-[11px] text-bone/50 pt-1">
+              Careers: Apply at <a href="mailto:saladtreat256@gmail.com" className="text-zest underline hover:text-bone">saladtreat256@gmail.com</a>
+            </p>
           </div>
         </div>
       </div>
