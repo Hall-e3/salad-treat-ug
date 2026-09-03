@@ -23,12 +23,17 @@ export default function Footer() {
             Quick Navigation
           </AppText>
           <ul className="space-y-2 text-xs text-bone/70">
-            <li><a href="#top" className="hover:text-zest cursor-pointer">Home</a></li>
-            <li><a href="#menu" className="hover:text-zest cursor-pointer">Meal Subscription Plans</a></li>
-            <li><a href="#bowls" className="hover:text-zest cursor-pointer">Signature Salad Bowls</a></li>
-            <li><a href="#builder" className="hover:text-zest cursor-pointer">Custom Bowl Builder</a></li>
-            <li><a href="#order" className="hover:text-zest cursor-pointer">Kampala Delivery Estimator</a></li>
-            <li><a href="#faq" className="hover:text-zest cursor-pointer">FAQs</a></li>
+            <li><a href="/#top" className="hover:text-zest cursor-pointer">Home</a></li>
+            <li><a href="/#menu" className="hover:text-zest cursor-pointer">Meal Subscription Plans</a></li>
+            <li><a href="/#bowls" className="hover:text-zest cursor-pointer">Signature Salad Bowls</a></li>
+            <li><a href="/#builder" className="hover:text-zest cursor-pointer">Custom Bowl Builder</a></li>
+            <li><a href="/#order" className="hover:text-zest cursor-pointer">Kampala Delivery Estimator</a></li>
+            <li><a href="/#faq" className="hover:text-zest cursor-pointer">FAQs</a></li>
+            <li className="pt-2 border-t border-bone/10 font-medium flex gap-3 text-[11px] text-zest">
+              <a href="/terms" className="hover:underline">Terms of Service</a>
+              <span>•</span>
+              <a href="/privacy" className="hover:underline">Privacy Policy</a>
+            </li>
           </ul>
         </div>
 

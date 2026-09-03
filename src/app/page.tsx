@@ -10,8 +10,42 @@ import Footer from "@/components/layout/Footer";
 import CartDrawerModal from "@/components/modals/CartDrawerModal";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Salad Treat Kampala",
+    "image": "https://saladtreat.ug/photos/kampala-crunch-bowl.png",
+    "@id": "https://saladtreat.ug",
+    "url": "https://saladtreat.ug",
+    "telephone": "+256752182379",
+    "priceRange": "UGX 22,000 - UGX 250,000",
+    "servesCuisine": ["Healthy", "Salad", "High Protein", "Keto"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kampala",
+      "addressRegion": "Central Region",
+      "addressCountry": "UG"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.tiktok.com/@salad.treat.ug",
+      "https://www.instagram.com/salad_treat"
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <HeaderNav />
       <main>
         <HeroSection />
