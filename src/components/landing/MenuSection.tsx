@@ -21,9 +21,21 @@ export default function MenuSection() {
   );
 
   const tabs = [
-    { id: "plans", label: "Meal Subscription Plans" },
-    { id: "bowls", label: "Signature Salad Bowls" },
-    { id: "custom", label: "Custom Bowl Builder" },
+    {
+      id: "plans",
+      label: "Meal Subscription Plans",
+      tooltip: "Subscribe to Weekly (6-day) or Monthly (24-day) lunch packages with FREE delivery across Kampala.",
+    },
+    {
+      id: "bowls",
+      label: "Signature Salad Bowls",
+      tooltip: "Order chef-crafted, high-protein & keto-friendly individual salad bowls prepared fresh daily.",
+    },
+    {
+      id: "custom",
+      label: "Custom Bowl Builder",
+      tooltip: "Build your own salad step-by-step: pick your greens, protein, fresh toppings & house dressing.",
+    },
   ];
 
   const allItems: MenuItem[] = [...mealPlans, ...signatureBowls];

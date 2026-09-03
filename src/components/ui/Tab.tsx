@@ -5,6 +5,7 @@ export interface TabItem<T extends string = string> {
   id: T;
   label: string;
   icon?: React.ReactNode;
+  tooltip?: string;
 }
 
 interface TabProps<T extends string = string> {
@@ -29,6 +30,7 @@ export default function Tab<T extends string = string>({
           key={tab.id}
           label={tab.label}
           icon={tab.icon}
+          tooltip={tab.tooltip}
           isActive={activeTab === tab.id}
           onClick={() => onTabChange(tab.id)}
           darkMode={darkMode}

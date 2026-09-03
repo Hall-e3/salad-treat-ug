@@ -12,6 +12,7 @@ interface ChipProps {
   onClick?: () => void;
   className?: string;
   darkMode?: boolean;
+  tooltip?: string;
 }
 
 export default function Chip({
@@ -22,6 +23,7 @@ export default function Chip({
   onClick,
   className = "",
   darkMode = false,
+  tooltip,
 }: ChipProps) {
   if (variant === "overlay") {
     return (
@@ -48,22 +50,32 @@ export default function Chip({
     : "border-line bg-white text-charcoal/70 hover:border-charcoal/40 hover:text-charcoal";
 
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={twMerge(
-        baseClasses,
-        isActive ? activeClasses : inactiveClasses,
-        className,
+    <div className="relative group inline-flex items-center">
+      <button
+        type="button"
+        onClick={onClick}
+        className={twMerge(
+          baseClasses,
+          isActive ? activeClasses : inactiveClasses,
+          className,
+        )}
+      >
+        {isActive && (
+          <CheckIcon className="h-3.5 w-3.5 text-basil shrink-0 stroke-[3]" />
+        )}
+        {!isActive && icon && (
+          <span className="shrink-0 flex items-center">{icon}</span>
+        )}
+        <span>{label}</span>
+      </button>
+
+      {/* Professional Hover Tooltip Popup */}
+      {tooltip && (
+        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 p-3 rounded-2xl bg-[#0a180f] text-bone text-xs font-normal leading-snug border border-zest/40 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 pointer-events-none text-center">
+          <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#0a180f] border-t border-l border-zest/40 rotate-45" />
+          <p className="text-[11px] text-bone/90 font-medium">{tooltip}</p>
+        </div>
       )}
-    >
-      {isActive && (
-        <CheckIcon className="h-3.5 w-3.5 text-basil shrink-0 stroke-[3]" />
-      )}
-      {!isActive && icon && (
-        <span className="shrink-0 flex items-center">{icon}</span>
-      )}
-      <span>{label}</span>
-    </button>
+    </div>
   );
 }
