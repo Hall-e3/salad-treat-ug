@@ -1,32 +1,8 @@
-import { StarIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import { MapPinIcon } from "@heroicons/react/24/solid";
+import { testimonialsData } from "@/data/testimonials";
 
 export function Testimonials() {
-  const reviews = [
-    {
-      name: "Dr. Sharon K.",
-      role: "Medical Resident, Mulago Hospital",
-      quote:
-        "The Lunch plan is a lifesaver. On long hospital shifts, having a fresh high-protein bowl delivered right at 12:30pm keeps me focused without resorting to junk food.",
-      location: "Kololo",
-      rating: 5,
-    },
-    {
-      name: "Dennis M.",
-      role: "Software Lead, Innovation Village",
-      quote:
-        "We subscribed our tech team to the full-day package. The portion sizes are honest, greens are crisp, and ordering on WhatsApp takes 10 seconds.",
-      location: "Ntinda",
-      rating: 5,
-    },
-    {
-      name: "Brenda T.",
-      role: "Fitness Coach & Entrepreneur",
-      quote:
-        "I love the custom bowl lab! Being able to pick my exact proteins, quinoa base, and house dressings makes tracking my macros super easy.",
-      location: "Nakasero",
-      rating: 5,
-    },
-  ];
+  const reviews = testimonialsData;
 
   return (
     <section className="bg-herb-white py-20 text-charcoal border-t border-line">
@@ -50,11 +26,6 @@ export function Testimonials() {
               className="flex flex-col justify-between rounded-3xl border border-line bg-white/80 p-8 shadow-sm hover:shadow-md transition-shadow"
             >
               <div>
-                <div className="flex gap-1 text-zest mb-4">
-                  {Array.from({ length: rev.rating }).map((_, r) => (
-                    <StarIcon key={r} className="h-5 w-5 text-zest" />
-                  ))}
-                </div>
                 <p className="text-sm leading-relaxed text-charcoal/80 italic">
                   &ldquo;{rev.quote}&rdquo;
                 </p>
