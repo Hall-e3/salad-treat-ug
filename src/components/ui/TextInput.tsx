@@ -68,12 +68,12 @@ export default function TextInput({
   const hasRight = Boolean(rightIcon);
 
   const baseStyles = darkMode
-    ? "border-bone/20 bg-[#0c1610] text-bone placeholder:text-bone/40 focus:border-zest"
-    : "border-line bg-herb-white text-charcoal placeholder:text-charcoal/40 focus:border-zest";
+    ? "border-bone/20 bg-[#0c1610] text-bone placeholder:text-bone/40 focus:border-zest focus:ring-2 focus:ring-zest/30"
+    : "border-line bg-herb-white text-charcoal placeholder:text-charcoal/40 focus:border-zest-deep focus:ring-2 focus:ring-zest/25";
 
   const stateStyles =
     state === "error"
-      ? "border-red-500 focus:border-red-500"
+      ? "border-red-500 focus:border-red-500 focus:ring-red-200"
       : state === "disabled"
       ? "opacity-50 cursor-not-allowed"
       : "";
@@ -83,10 +83,10 @@ export default function TextInput({
       {label && (
         <AppText
           as="label"
-          variant="label-md"
-          color={darkMode ? "inverse" : "primary"}
+          variant="label-sm"
+          color={darkMode ? "zest" : "secondary"}
           htmlFor={inputId}
-          className="font-medium truncate"
+          className="font-bold uppercase tracking-wider text-[11px] truncate flex items-center gap-1"
         >
           {label}
           {required && <span className="text-zest ml-0.5">*</span>}
@@ -95,7 +95,7 @@ export default function TextInput({
 
       <div className="relative flex items-center w-full min-w-0">
         {hasLeft && (
-          <span className="absolute left-3.5 flex items-center text-charcoal/40 dark:text-bone/40 pointer-events-none">
+          <span className="absolute left-3.5 flex items-center text-zest-deep dark:text-zest pointer-events-none shrink-0 z-10">
             {leftIcon}
           </span>
         )}
@@ -111,12 +111,12 @@ export default function TextInput({
           required={required}
           autoComplete={autoComplete}
           className={twMerge(
-            "w-full rounded-2xl border outline-none transition-colors font-medium",
+            "w-full rounded-xl border outline-none transition-all duration-200 font-semibold shadow-xs",
             sizeClasses[size],
             baseStyles,
             stateStyles,
-            hasLeft ? "pl-10" : "",
-            hasRight ? "pr-10" : "",
+            hasLeft ? "pl-10" : "pl-3.5",
+            hasRight ? "pr-10" : "pr-3.5",
             inputClassName
           )}
         />

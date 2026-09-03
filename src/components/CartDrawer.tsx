@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useCart } from "@/lib/cart";
 import { formatUGX, deliveryZones } from "@/lib/menu-data";
+import { SelectInput, TextInput } from "@/components/ui";
 import {
   XMarkIcon,
   PlusIcon,
@@ -37,6 +38,18 @@ export function CartDrawer() {
   const [location, setLocation] = useState("");
   const [notes, setNotes] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("MTN Mobile Money");
+
+  const zoneOptions = deliveryZones.map((zone) => ({
+    value: zone.id,
+    label: `${zone.name} (+UGX ${formatUGX(zone.fee)})`,
+  }));
+
+  const paymentOptions = [
+    { value: "MTN Mobile Money", label: "MTN Mobile Money" },
+    { value: "Airtel Money", label: "Airtel Money" },
+    { value: "Cash on Delivery", label: "Cash on Delivery" },
+    { value: "Bank Transfer", label: "Bank Transfer" },
+  ];
 
   return (
     <>
@@ -143,24 +156,26 @@ export function CartDrawer() {
                         UGX {formatUGX(line.unitPrice * line.qty)}
                       </span>
 
-                      {/* Qty Controls */}
-                      <div className="flex items-center gap-1.5 sm:gap-2 rounded-full border border-line bg-white px-2 py-1 shrink-0">
+                      {/* Visible, High-Contrast Qty Controls */}
+                      <div className="flex items-center gap-1 sm:gap-1.5 rounded-full border border-zest/30 bg-[#0f1b13] p-1 shrink-0 shadow-xs">
                         <button
+                          type="button"
                           onClick={() => setQty(line.id, line.qty - 1)}
-                          className="flex h-5 w-5 items-center justify-center rounded-full text-xs font-bold text-charcoal/70 hover:bg-bone cursor-pointer"
+                          className="flex h-6 w-6 items-center justify-center rounded-full bg-bone/20 text-bone hover:bg-bone hover:text-basil transition-colors cursor-pointer"
                           aria-label={`Reduce ${line.name}`}
                         >
-                          <MinusIcon className="h-3 w-3" />
+                          <MinusIcon className="h-3.5 w-3.5 text-bone stroke-[2.5]" />
                         </button>
-                        <span className="w-4 text-center text-xs font-bold">
+                        <span className="w-5 text-center text-xs font-bold text-zest">
                           {line.qty}
                         </span>
                         <button
+                          type="button"
                           onClick={() => setQty(line.id, line.qty + 1)}
-                          className="flex h-5 w-5 items-center justify-center rounded-full text-xs font-bold text-charcoal/70 hover:bg-bone cursor-pointer"
+                          className="flex h-6 w-6 items-center justify-center rounded-full bg-zest text-basil hover:bg-zest-deep transition-colors cursor-pointer font-bold"
                           aria-label={`Increase ${line.name}`}
                         >
-                          <PlusIcon className="h-3 w-3" />
+                          <PlusIcon className="h-3.5 w-3.5 text-basil stroke-[2.5]" />
                         </button>
                       </div>
                     </div>
@@ -175,71 +190,43 @@ export function CartDrawer() {
         {lines.length > 0 && (
           <div className="border-t border-line bg-white px-4 sm:px-6 py-4 sm:py-5 space-y-3.5">
             {/* Delivery Zone Picker */}
-            <div>
-              <label className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-charcoal/60 block mb-1 flex items-center gap-1">
-                <MapPinIcon className="h-3.5 w-3.5 text-zest-deep shrink-0" />
-                <span>Select Delivery Zone</span>
-              </label>
-              <select
-                value={selectedZoneId}
-                onChange={(e) => setSelectedZoneId(e.target.value)}
-                className="w-full rounded-xl border border-line bg-herb-white px-3 py-2 text-xs text-charcoal outline-none focus:border-zest cursor-pointer min-w-0"
-              >
-                {deliveryZones.map((zone) => (
-                  <option key={zone.id} value={zone.id}>
-                    {zone.name} (+UGX {formatUGX(zone.fee)})
-                  </option>
-                ))}
-              </select>
-            </div>
+            <SelectInput
+              label="Select Delivery Zone"
+              leftIcon={<MapPinIcon className="h-4 w-4" />}
+              value={selectedZoneId}
+              onChange={(e) => setSelectedZoneId(e.target.value)}
+              options={zoneOptions}
+            />
 
             {/* Customer Inputs */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              <div className="relative min-w-0">
-                <UserIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-charcoal/40" />
-                <input
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Your Full Name *"
-                  className="w-full rounded-xl border border-line bg-herb-white pl-8 pr-3 py-2 text-xs text-charcoal outline-none focus:border-zest min-w-0"
-                />
-              </div>
-
-              <div className="relative min-w-0">
-                <MapPinIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-charcoal/40" />
-                <input
-                  value={location}
-                  onChange={(e) => setLocation(e.target.value)}
-                  placeholder="Street / Office *"
-                  className="w-full rounded-xl border border-line bg-herb-white pl-8 pr-3 py-2 text-xs text-charcoal outline-none focus:border-zest min-w-0"
-                />
-              </div>
+              <TextInput
+                placeholder="Your Full Name *"
+                leftIcon={<UserIcon className="h-4 w-4" />}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <TextInput
+                placeholder="Street / Office *"
+                leftIcon={<MapPinIcon className="h-4 w-4" />}
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+              />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              <div className="relative min-w-0">
-                <CreditCardIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-charcoal/40 pointer-events-none" />
-                <select
-                  value={paymentMethod}
-                  onChange={(e) => setPaymentMethod(e.target.value)}
-                  className="w-full rounded-xl border border-line bg-herb-white pl-8 pr-2 py-2 text-xs text-charcoal outline-none focus:border-zest cursor-pointer min-w-0"
-                >
-                  <option value="MTN Mobile Money">MTN Mobile Money</option>
-                  <option value="Airtel Money">Airtel Money</option>
-                  <option value="Cash on Delivery">Cash on Delivery</option>
-                  <option value="Bank Transfer">Bank Transfer</option>
-                </select>
-              </div>
-
-              <div className="relative min-w-0">
-                <DocumentTextIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-charcoal/40" />
-                <input
-                  value={notes}
-                  onChange={(e) => setNotes(e.target.value)}
-                  placeholder="Notes (e.g. no onions)"
-                  className="w-full rounded-xl border border-line bg-herb-white pl-8 pr-3 py-2 text-xs text-charcoal outline-none focus:border-zest min-w-0"
-                />
-              </div>
+              <SelectInput
+                leftIcon={<CreditCardIcon className="h-4 w-4" />}
+                value={paymentMethod}
+                onChange={(e) => setPaymentMethod(e.target.value)}
+                options={paymentOptions}
+              />
+              <TextInput
+                placeholder="Notes (e.g. no onions)"
+                leftIcon={<DocumentTextIcon className="h-4 w-4" />}
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+              />
             </div>
 
             {/* Pricing Calculation */}
@@ -271,7 +258,7 @@ export function CartDrawer() {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-full bg-zest py-3.5 text-center text-sm font-bold text-basil shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-zest-deep cursor-pointer"
             >
-              <ChatBubbleLeftRightIcon className="h-5 w-5 text-basil" />
+              <ChatBubbleLeftRightIcon className="h-5 w-5 text-basil shrink-0" />
               <span>Send Order via WhatsApp</span>
             </a>
 

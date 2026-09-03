@@ -13,6 +13,8 @@ import {
   TruckIcon,
 } from "@heroicons/react/24/outline";
 
+import { SelectInput } from "@/components/ui";
+
 export function OrderBand() {
   const { openCart, totalItems, selectedZoneId, setSelectedZoneId } = useCart();
   const [activeZoneId, setActiveZoneId] = useState(selectedZoneId);
@@ -24,6 +26,11 @@ export function OrderBand() {
     setActiveZoneId(zoneId);
     setSelectedZoneId(zoneId);
   };
+
+  const zoneOptions = deliveryZones.map((zone) => ({
+    value: zone.id,
+    label: zone.name,
+  }));
 
   return (
     <section id="order" className="relative overflow-hidden bg-basil-deep">
@@ -108,19 +115,14 @@ export function OrderBand() {
               Select Your Location in Kampala
             </h4>
 
-            <div className="mt-4 relative">
-              <MapPinIcon className="absolute left-4 top-3.5 h-5 w-5 text-zest" />
-              <select
+            <div className="mt-4">
+              <SelectInput
+                leftIcon={<MapPinIcon className="h-5 w-5" />}
                 value={activeZoneId}
                 onChange={(e) => handleSelectZone(e.target.value)}
-                className="w-full rounded-2xl border border-bone/20 bg-[#0e1b12] pl-11 pr-4 py-3.5 text-sm text-bone outline-none focus:border-zest cursor-pointer"
-              >
-                {deliveryZones.map((zone) => (
-                  <option key={zone.id} value={zone.id}>
-                    {zone.name}
-                  </option>
-                ))}
-              </select>
+                options={zoneOptions}
+                darkMode={true}
+              />
             </div>
 
             <div className="mt-6 rounded-2xl bg-[#0b160e] p-5 border border-bone/10 flex items-center justify-between">
