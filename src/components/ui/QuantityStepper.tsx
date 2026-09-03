@@ -23,41 +23,54 @@ export default function QuantityStepper({
   darkMode = false,
 }: QuantityStepperProps) {
   return (
-    <div className="flex items-center justify-between gap-3">
-      <div className="flex items-center gap-2 rounded-full border border-line bg-white dark:bg-[#0c1610] p-1">
+    <div className="flex items-center justify-between gap-3 shrink-0">
+      <div
+        className={`flex items-center gap-1.5 rounded-full border p-1 shadow-xs ${
+          darkMode
+            ? "border-zest/30 bg-[#0e1c13] text-bone"
+            : "border-line bg-bone/40 text-charcoal"
+        }`}
+      >
         <button
           type="button"
           disabled={value <= min}
           onClick={() => onChange(Math.max(min, value - 1))}
           aria-label={label ? `Decrease ${label}` : "Decrease quantity"}
-          className="flex h-6 w-6 items-center justify-center rounded-full text-charcoal/70 dark:text-bone/70 transition-colors hover:bg-bone dark:hover:bg-basil disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+          className={`flex h-7 w-7 items-center justify-center rounded-full transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer shrink-0 ${
+            darkMode
+              ? "bg-basil text-zest hover:bg-basil-deep"
+              : "bg-white text-basil border border-line hover:bg-basil hover:text-bone hover:border-basil"
+          }`}
         >
-          <MinusIcon className="h-3.5 w-3.5" />
+          <MinusIcon className="h-3.5 w-3.5 stroke-[2.5]" />
         </button>
 
-        <AppText
-          variant="label-md"
-          color={darkMode ? "inverse" : "primary"}
-          as="span"
-          className="w-5 text-center font-bold"
+        <span
+          className={`w-6 text-center font-display text-sm font-bold select-none ${
+            darkMode ? "text-bone" : "text-charcoal"
+          }`}
         >
           {value}
-        </AppText>
+        </span>
 
         <button
           type="button"
           disabled={value >= max}
           onClick={() => onChange(Math.min(max, value + 1))}
           aria-label={label ? `Increase ${label}` : "Increase quantity"}
-          className="flex h-6 w-6 items-center justify-center rounded-full text-charcoal/70 dark:text-bone/70 transition-colors hover:bg-bone dark:hover:bg-basil disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+          className={`flex h-7 w-7 items-center justify-center rounded-full transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer shrink-0 ${
+            darkMode
+              ? "bg-zest text-basil hover:bg-zest-deep"
+              : "bg-zest text-basil hover:bg-zest-deep shadow-xs"
+          }`}
         >
-          <PlusIcon className="h-3.5 w-3.5" />
+          <PlusIcon className="h-3.5 w-3.5 stroke-[2.5]" />
         </button>
       </div>
 
       {label && (
         <div className="flex items-center gap-1.5">
-          {icon && <span className="text-charcoal/50 dark:text-bone/50">{icon}</span>}
+          {icon && <span className="text-charcoal/50">{icon}</span>}
           <AppText variant="caption" color={darkMode ? "inverse" : "secondary"}>
             {label}
           </AppText>

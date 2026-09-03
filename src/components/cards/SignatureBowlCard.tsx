@@ -105,23 +105,13 @@ export default function SignatureBowlCard({ item, onOpenModal }: SignatureBowlCa
           </AppText>
         </div>
 
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={onOpenModal}
-            className="rounded-full border border-bone/20 p-2.5 text-xs text-bone/70 hover:border-zest hover:text-zest transition-colors cursor-pointer"
-            title="View Details & Specs"
-          >
-            <InformationCircleIcon className="h-5 w-5 text-bone/70 hover:text-zest" />
-          </button>
-          <Button
-            text="Add"
-            variant="filled"
-            size="sm"
-            onClick={handleAdd}
-            leftIcon={<PlusIcon className="h-4 w-4 text-basil" />}
-          />
-        </div>
+        <Button
+          text="Add"
+          variant="filled"
+          size="sm"
+          onClick={handleAdd}
+          leftIcon={<PlusIcon className="h-4 w-4 text-basil" />}
+        />
       </div>
     </div>
   );
