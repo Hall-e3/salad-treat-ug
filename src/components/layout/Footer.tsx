@@ -60,9 +60,9 @@ export default function Footer() {
                 href="https://www.tiktok.com/@salad.treat.ug"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full bg-bone/10 px-3 py-1 text-xs font-bold text-bone hover:bg-zest hover:text-basil transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 rounded-full bg-zest px-3 py-1 text-xs font-bold text-basil hover:bg-zest-deep transition-colors cursor-pointer"
               >
-                <span>TikTok (10.2K)</span>
+                <span>TikTok @salad.treat.ug</span>
               </a>
               <a
                 href="https://www.instagram.com/salad_treat"
@@ -74,7 +74,45 @@ export default function Footer() {
               </a>
             </div>
 
-            <p className="text-[11px] text-bone/50 pt-1">
+            <div className="pt-2">
+              <p className="text-[10px] uppercase font-bold text-bone/50 tracking-wider mb-1">
+                Featured TikTok Videos:
+              </p>
+              <ul className="space-y-1 text-[11px] text-zest">
+                <li>
+                  <a
+                    href="https://www.tiktok.com/@salad.treat.ug/video/7670135433531018516"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline flex items-center gap-1"
+                  >
+                    <span>• Fresh Salad Options & Prep</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.tiktok.com/@salad.treat.ug/video/7678706239697702164"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline flex items-center gap-1"
+                  >
+                    <span>• Bulk Corporate Orders</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.tiktok.com/@salad.treat.ug/video/7672725766693555477"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline flex items-center gap-1"
+                  >
+                    <span>• Healthy Chicken Sandwiches</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <p className="text-[11px] text-bone/50 pt-2 border-t border-bone/10">
               Careers: Apply at <a href="mailto:saladtreat256@gmail.com" className="text-zest underline hover:text-bone">saladtreat256@gmail.com</a>
             </p>
           </div>
