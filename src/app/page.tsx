@@ -5,6 +5,7 @@ import MenuSection from "@/components/landing/MenuSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import OrderBandSection from "@/components/landing/OrderBandSection";
 import FaqSection from "@/components/landing/FaqSection";
+import { HiringBanner } from "@/components/HiringBanner";
 import Footer from "@/components/layout/Footer";
 import CartDrawerModal from "@/components/modals/CartDrawerModal";
 
@@ -19,6 +20,7 @@ export default function Home() {
         <TestimonialsSection />
         <OrderBandSection />
         <FaqSection />
+        <HiringBanner />
       </main>
       <Footer />
       <CartDrawerModal />

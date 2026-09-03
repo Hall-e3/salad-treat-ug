@@ -165,6 +165,29 @@ export const mealPlans: MealPlan[] = [
 
 export const signatureBowls: SignatureBowl[] = [
   {
+    id: "cauli-broccoli",
+    name: "Cauli-Broccoli Crunch",
+    tagline: "Blanched cauliflower, broccoli florets, sweet peppers & mustard dip.",
+    description:
+      "A crunchy, antioxidant-rich medley of cauliflower, broccoli, diced bell peppers, and red onions with house honey mustard sauce.",
+    category: "bowls",
+    price: 30000,
+    featured: true,
+    image: "/photos/kampala-crunch-bowl.png",
+    calories: "410 kcal",
+    protein: "18g",
+    carbs: "34g",
+    fat: "14g",
+    ingredients: [
+      "Steamed Cauliflower & Broccoli",
+      "Tri-Color Bell Peppers",
+      "Red Onion Dice",
+      "Crispy Garlic Flakes",
+      "Honey Mustard Vinaigrette",
+    ],
+    tags: ["Customer Favorite", "Antioxidant Rich"],
+  },
+  {
     id: "kampala-crunch",
     name: "Kampala Crunch Bowl",
     tagline: "Flame-grilled chicken, sweet mango, ripe avocado & golden sweetcorn.",
