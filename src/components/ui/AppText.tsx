@@ -61,20 +61,20 @@ interface AppTextProps {
 }
 
 const variantClasses: Record<TextVariant, string> = {
-  "display-lg": "text-[32px] sm:text-[40px] lg:text-[48px] font-display font-semibold leading-[1.15] tracking-[-0.02em]",
-  "display-md": "text-[26px] sm:text-[30px] lg:text-[36px] font-display font-semibold leading-[1.2] tracking-[-0.02em]",
-  "display-sm": "text-[22px] sm:text-[26px] lg:text-[30px] font-display font-semibold leading-[1.25] tracking-[-0.01em]",
-  "heading-lg": "text-[20px] sm:text-[22px] lg:text-[24px] font-display font-semibold leading-[1.3]",
-  "heading-md": "text-[18px] sm:text-[19px] lg:text-[20px] font-display font-semibold leading-[1.35]",
-  "heading-sm": "text-[16px] sm:text-[17px] lg:text-[18px] font-display font-semibold leading-[1.4]",
-  "body-lg": "text-[15px] sm:text-[16px] font-normal leading-[1.5]",
-  "body-md": "text-[13px] sm:text-[14px] font-normal leading-[1.5]",
-  "label-lg": "text-[13px] sm:text-[14px] font-medium leading-[1.4]",
-  "label-md": "text-[12px] font-medium leading-[1.4]",
-  "label-sm": "text-[11px] font-medium leading-[1.4] tracking-[0.02em]",
-  "body-sm": "text-[12px] font-normal leading-[1.4]",
-  caption: "text-[11px] sm:text-[12px] font-normal leading-[1.4]",
-  code: "text-[12px] sm:text-[13px] font-normal leading-[1.4] font-mono",
+  "display-lg": "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-semibold leading-[1.08] tracking-[-0.025em]",
+  "display-md": "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-semibold leading-[1.12] tracking-[-0.02em]",
+  "display-sm": "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display font-semibold leading-[1.18] tracking-[-0.015em]",
+  "heading-lg": "text-lg sm:text-xl md:text-2xl lg:text-3xl font-display font-semibold leading-[1.25]",
+  "heading-md": "text-base sm:text-lg md:text-xl font-display font-semibold leading-[1.3]",
+  "heading-sm": "text-sm sm:text-base md:text-lg font-display font-semibold leading-[1.35]",
+  "body-lg": "text-sm sm:text-base md:text-lg font-normal leading-relaxed",
+  "body-md": "text-xs sm:text-sm md:text-base font-normal leading-relaxed",
+  "label-lg": "text-xs sm:text-sm md:text-base font-semibold leading-tight uppercase tracking-wider",
+  "label-md": "text-[11px] sm:text-xs font-semibold leading-tight uppercase tracking-wider",
+  "label-sm": "text-[10px] sm:text-[11px] font-semibold leading-tight uppercase tracking-widest",
+  "body-sm": "text-[11px] sm:text-xs font-normal leading-normal",
+  caption: "text-[10px] sm:text-[11px] font-normal leading-normal",
+  code: "text-xs sm:text-sm font-normal leading-normal font-mono",
 };
 
 const colorClasses: Record<TextColor, string> = {

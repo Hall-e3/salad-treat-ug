@@ -47,10 +47,21 @@ body {
   overflow-x: hidden;
   word-break: break-word;
   overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .font-display {
   font-family: var(--font-display), Georgia, serif;
+}
+
+/* Hide scrollbar for clean horizontal mobile swipe tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @keyframes fadeIn {

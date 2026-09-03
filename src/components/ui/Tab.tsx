@@ -24,7 +24,7 @@ export default function Tab<T extends string = string>({
   darkMode = true,
 }: TabProps<T>) {
   return (
-    <div className={`flex flex-wrap gap-2.5 ${className}`}>
+    <div className={`flex items-center gap-2.5 overflow-x-auto no-scrollbar max-w-full py-1 ${className}`}>
       {tabs.map((tab) => (
         <Chip
           key={tab.id}
