@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --basil: #16241c;
+  --basil-deep: #0f1a14;
+  --herb-white: #f3f6ef;
+  --bone: #f3efe3;
+  --charcoal: #1e2b22;
+  --zest: #e8863c;
+  --zest-deep: #c96b28;
+  --line: #d8ddd0;
+}
+
+@theme inline {
+  --color-basil: var(--basil);
+  --color-basil-deep: var(--basil-deep);
+  --color-herb-white: var(--herb-white);
+  --color-bone: var(--bone);
+  --color-charcoal: var(--charcoal);
+  --color-zest: var(--zest);
+  --color-zest-deep: var(--zest-deep);
+  --color-line: var(--line);
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-inter);
+}
+
+html, body {
+  scroll-behavior: smooth;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background: var(--herb-white);
+  color: var(--charcoal);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
