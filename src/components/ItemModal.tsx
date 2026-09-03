@@ -71,18 +71,18 @@ export function ItemModal({
       />
 
       {/* Modal Dialog */}
-      <div className="relative z-10 w-full max-w-2xl overflow-hidden rounded-3xl bg-herb-white text-charcoal shadow-2xl border border-line animate-fadeIn">
+      <div className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl bg-herb-white text-charcoal shadow-2xl border border-line animate-fadeIn min-w-0">
         <button
           onClick={onClose}
-          className="absolute right-5 top-5 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-basil/10 text-charcoal hover:bg-basil hover:text-bone transition-colors cursor-pointer"
+          className="absolute right-4 top-4 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-basil/10 text-charcoal hover:bg-basil hover:text-bone transition-colors cursor-pointer shrink-0"
           aria-label="Close modal"
         >
           <XMarkIcon className="h-5 w-5" />
         </button>
 
-        <div className="grid md:grid-cols-2">
+        <div className="grid md:grid-cols-2 min-w-0">
           {/* Image & Badges */}
-          <div className="relative h-64 md:h-full min-h-[260px] bg-basil">
+          <div className="relative h-52 sm:h-64 md:h-full min-h-[220px] bg-basil">
             <Image
               src={item.image}
               alt={item.name}
@@ -104,12 +104,12 @@ export function ItemModal({
           </div>
 
           {/* Content */}
-          <div className="flex flex-col justify-between p-6 sm:p-8">
+          <div className="flex flex-col justify-between p-5 sm:p-8 min-w-0">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-zest-deep">
                 {isPlan ? "Subscription Plan" : "Signature Bowl"}
               </span>
-              <h3 className="font-display text-2xl sm:text-3xl mt-1 text-charcoal">
+              <h3 className="font-display text-2xl sm:text-3xl mt-1 text-charcoal break-words">
                 {item.name}
               </h3>
               <p className="mt-2 text-sm italic text-charcoal/70">
@@ -121,7 +121,7 @@ export function ItemModal({
 
               {/* Nutrition Macros */}
               {(item.calories || item.protein) && (
-                <div className="mt-5 grid grid-cols-4 gap-2 rounded-2xl bg-white p-3 border border-line text-center">
+                <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-2 rounded-2xl bg-white p-3 border border-line text-center">
                   <div>
                     <p className="text-[10px] text-charcoal/50 uppercase">Calories</p>
                     <p className="text-xs font-bold text-charcoal">{item.calories || "N/A"}</p>
@@ -152,8 +152,8 @@ export function ItemModal({
                       key={ing}
                       className="flex items-center gap-1 rounded-lg bg-bone px-2.5 py-1 text-xs text-charcoal/80 border border-line"
                     >
-                      <CheckCircleIcon className="h-3 w-3 text-zest-deep" />
-                      <span>{ing}</span>
+                      <CheckCircleIcon className="h-3 w-3 text-zest-deep shrink-0" />
+                      <span className="truncate">{ing}</span>
                     </li>
                   ))}
                 </ul>
@@ -163,11 +163,11 @@ export function ItemModal({
             {/* Price & Add Controls */}
             <div className="mt-6 pt-5 border-t border-line">
               {isPlan && (
-                <div className="mb-4 flex items-center justify-between">
-                  <span className="text-xs font-medium text-charcoal/70">
+                <div className="mb-4 flex items-center justify-between gap-2">
+                  <span className="text-xs font-medium text-charcoal/70 shrink-0">
                     Plan Duration:
                   </span>
-                  <div className="inline-flex rounded-full border border-line p-1 bg-white">
+                  <div className="inline-flex rounded-full border border-line p-1 bg-white shrink-0">
                     {(["weekly", "monthly"] as Duration[]).map((d) => (
                       <button
                         key={d}
@@ -185,7 +185,7 @@ export function ItemModal({
                 </div>
               )}
 
-              <div className="flex items-center justify-between gap-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div>
                   <p className="text-xs text-charcoal/50">Total Price</p>
                   <p className="font-display text-2xl text-basil font-bold">
@@ -193,8 +193,8 @@ export function ItemModal({
                   </p>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center rounded-full border border-line bg-white p-1">
+                <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+                  <div className="flex items-center rounded-full border border-line bg-white p-1 shrink-0">
                     <button
                       onClick={() => setQty(Math.max(1, qty - 1))}
                       className="flex h-7 w-7 items-center justify-center rounded-full text-charcoal/70 hover:bg-bone cursor-pointer"
@@ -214,9 +214,9 @@ export function ItemModal({
 
                   <button
                     onClick={handleAdd}
-                    className="flex items-center gap-1.5 rounded-full bg-zest px-5 py-3 text-xs font-bold text-basil transition-transform hover:-translate-y-0.5 shadow-md cursor-pointer"
+                    className="flex items-center gap-1.5 rounded-full bg-zest px-5 py-3 text-xs font-bold text-basil transition-transform hover:-translate-y-0.5 shadow-md cursor-pointer shrink-0"
                   >
-                    <ShoppingBagIcon className="h-4 w-4 text-basil" />
+                    <ShoppingBagIcon className="h-4 w-4 text-basil shrink-0" />
                     <span>Add to Cart</span>
                   </button>
                 </div>
