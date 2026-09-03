@@ -4,7 +4,6 @@ import { useState } from "react";
 import { customOptions, formatUGX, type CustomIngredient } from "@/lib/menu-data";
 import { useCart } from "@/lib/cart";
 import {
-  SparklesIcon,
   BeakerIcon,
   CheckCircleIcon,
   PlusIcon,
@@ -92,9 +91,8 @@ export function CustomBowlBuilder() {
       <div className="mt-8 grid gap-6 sm:gap-8 md:grid-cols-2 min-w-0">
         {/* Step 1: Base */}
         <div className="min-w-0">
-          <label className="text-xs font-bold uppercase tracking-wider text-zest flex items-center gap-1">
-            <SparklesIcon className="h-3.5 w-3.5 text-zest shrink-0" />
-            <span>1. Select Your Base Greens / Grains</span>
+          <label className="text-xs font-bold uppercase tracking-wider text-zest block">
+            1. Select Your Base Greens / Grains
           </label>
           <div className="mt-3 space-y-2.5">
             {bases.map((base) => (
@@ -122,9 +120,8 @@ export function CustomBowlBuilder() {
 
         {/* Step 2: Protein */}
         <div className="min-w-0">
-          <label className="text-xs font-bold uppercase tracking-wider text-zest flex items-center gap-1">
-            <SparklesIcon className="h-3.5 w-3.5 text-zest shrink-0" />
-            <span>2. Select Your Prime Protein</span>
+          <label className="text-xs font-bold uppercase tracking-wider text-zest block">
+            2. Select Your Prime Protein
           </label>
           <div className="mt-3 space-y-2.5">
             {proteins.map((protein) => (
@@ -153,9 +150,8 @@ export function CustomBowlBuilder() {
         {/* Step 3: Toppings */}
         <div className="min-w-0">
           <div className="flex items-center justify-between">
-            <label className="text-xs font-bold uppercase tracking-wider text-zest flex items-center gap-1">
-              <SparklesIcon className="h-3.5 w-3.5 text-zest shrink-0" />
-              <span>3. Fresh Toppings (Pick up to 4)</span>
+            <label className="text-xs font-bold uppercase tracking-wider text-zest block">
+              3. Fresh Toppings (Pick up to 4)
             </label>
             <span className="text-xs text-bone/50 shrink-0">
               {selectedToppings.length}/4 selected
@@ -190,9 +186,8 @@ export function CustomBowlBuilder() {
 
         {/* Step 4: Dressing */}
         <div className="min-w-0">
-          <label className="text-xs font-bold uppercase tracking-wider text-zest flex items-center gap-1">
-            <SparklesIcon className="h-3.5 w-3.5 text-zest shrink-0" />
-            <span>4. House Dressing</span>
+          <label className="text-xs font-bold uppercase tracking-wider text-zest block">
+            4. House Dressing
           </label>
           <div className="mt-3 space-y-2.5">
             {dressings.map((dressing) => (

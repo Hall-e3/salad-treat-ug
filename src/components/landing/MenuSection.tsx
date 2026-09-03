@@ -12,6 +12,7 @@ import SignatureBowlCard from "@/components/cards/SignatureBowlCard";
 import ProductDetailModal from "@/components/modals/ProductDetailModal";
 import { SearchInput, Tab, AppText } from "@/components/ui";
 import CustomBowlSection from "@/components/landing/CustomBowlSection";
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
 
 export default function MenuSection() {
   const [activeCategory, setActiveCategory] = useState<Category>("plans");
@@ -99,13 +100,20 @@ export default function MenuSection() {
           </div>
 
           {/* Category Navigation Tabs */}
-          <div className="mt-10 border-b border-bone/15 pb-4">
+          <div className="mt-10 border-b border-bone/15 pb-4 space-y-3">
             <Tab
               tabs={tabs}
               activeTab={activeCategory}
               onTabChange={(id) => setActiveCategory(id as Category)}
               darkMode
             />
+
+            {tabs.find((t) => t.id === activeCategory)?.tooltip && (
+              <div className="flex items-center gap-2 text-xs font-medium text-zest/90 bg-zest/10 border border-zest/20 px-3.5 py-2 rounded-xl">
+                <InformationCircleIcon className="h-4 w-4 text-zest shrink-0" />
+                <span>{tabs.find((t) => t.id === activeCategory)?.tooltip}</span>
+              </div>
+            )}
           </div>
 
           {/* Custom Bowl Builder if tab selected */}
