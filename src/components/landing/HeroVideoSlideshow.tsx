@@ -33,15 +33,15 @@ export default function HeroVideoSlideshow() {
         playsInline
         preload="auto"
         onEnded={handleEnded}
-        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity duration-1000"
+        className="absolute inset-0 h-full w-full object-cover opacity-85 transition-opacity duration-1000"
         poster="/photos/delivery-rider.png"
       >
         <source src={backgroundVideos[currentIndex]} type="video/mp4" />
       </video>
 
-      {/* Subtle Gradient Overlay to maintain high text contrast while keeping video crisp */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0d1c12]/90 via-[#0d1c12]/65 to-[#0d1c12]/40" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0d1c12] via-transparent to-[#0d1c12]/30" />
+      {/* Light Gradient Overlay to keep hero text high-contrast while video remains clearly visible */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0d1c12]/80 via-[#0d1c12]/45 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0d1c12] via-transparent to-black/20" />
 
       {/* Slideshow Progress Indicators */}
       <div className="absolute bottom-4 left-6 z-10 hidden sm:flex items-center gap-2 pointer-events-auto">
