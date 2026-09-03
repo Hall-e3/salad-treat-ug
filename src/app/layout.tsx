@@ -27,8 +27,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${fraunces.variable} ${inter.variable} antialiased w-full max-w-full overflow-x-hidden min-h-screen`}
       >
         <CartProvider>{children}</CartProvider>
