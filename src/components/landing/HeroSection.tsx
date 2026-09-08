@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { CherryTomatoes } from "@/components/Botanical";
 import { Button, AppText } from "@/components/ui";
 import {
@@ -10,6 +9,7 @@ import {
   CheckBadgeIcon,
 } from "@heroicons/react/24/outline";
 import HeroVideoSlideshow from "./HeroVideoSlideshow";
+import HeroImageSlideshow from "./HeroImageSlideshow";
 
 export default function HeroSection() {
   return (
@@ -67,6 +67,7 @@ export default function HeroSection() {
                 text="Explore Meal Plans & Menu"
                 variant="filled"
                 size="lg"
+                noTruncate
                 className="w-full sm:w-auto justify-center"
               />
             </a>
@@ -75,6 +76,7 @@ export default function HeroSection() {
                 text="Custom Bowl Builder"
                 variant="dark"
                 size="lg"
+                noTruncate
                 leftIcon={<AdjustmentsHorizontalIcon className="h-4 w-4 text-bone" />}
                 className="w-full sm:w-auto justify-center"
               />
@@ -83,32 +85,7 @@ export default function HeroSection() {
         </div>
 
         {/* Hero Image Showcase */}
-        <div className="relative mx-auto w-full max-w-md">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-2xl border-4 border-bone/10">
-            <Image
-              src="/photos/kampala-crunch-bowl.png"
-              alt="A Salad Treat signature bowl with grilled chicken, sweet mango, ripe avocado and sweetcorn"
-              fill
-              sizes="(min-width: 768px) 26rem, 90vw"
-              className="object-cover transition-transform duration-700 hover:scale-105"
-              priority
-            />
-          </div>
-
-          {/* Floating Badges */}
-          <p className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-bone px-6 py-2.5 text-xs font-bold text-basil shadow-xl border border-line flex items-center gap-2">
-            <CheckBadgeIcon className="h-4 w-4 text-zest-deep" />
-            <span>One Bowl. Endless Goodness.</span>
-          </p>
-
-          <div className="absolute top-6 -left-6 hidden sm:flex items-center gap-2.5 rounded-2xl bg-basil-deep/90 backdrop-blur border border-bone/20 p-3 shadow-xl">
-            <FireIcon className="h-6 w-6 text-zest" />
-            <div>
-              <p className="text-[11px] font-bold text-bone">Kampala Crunch</p>
-              <p className="text-[10px] text-zest">38g Protein • 540 kcal</p>
-            </div>
-          </div>
-        </div>
+        <HeroImageSlideshow />
       </div>
     </section>
   );

@@ -65,6 +65,7 @@ export default function Button({
   isLoading = false,
   className,
   bgColor,
+  noTruncate = false,
 }: ButtonProps) {
   return (
     <button
@@ -93,7 +94,9 @@ export default function Button({
       ) : (
         <>
           {leftIcon && <span className="shrink-0">{leftIcon}</span>}
-          <span className="truncate max-w-full">{text}</span>
+          <span className={noTruncate ? "text-center" : "truncate max-w-full"}>
+            {text}
+          </span>
           {rightIcon && <span className="shrink-0">{rightIcon}</span>}
         </>
       )}
