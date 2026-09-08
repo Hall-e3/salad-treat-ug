@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { formatUGX, type MenuItem, type Duration } from "@/lib/menu-data";
 import { useCart } from "@/lib/cart";
+import { useLockBodyScroll } from "@/lib/useLockBodyScroll";
 import { AppText, Button, Chip, QuantityStepper } from "@/components/ui";
 import { XMarkIcon, ShoppingBagIcon, CheckCircleIcon } from "@heroicons/react/24/outline";
 
@@ -16,6 +17,8 @@ export default function ProductDetailModal({ item, onClose }: ProductDetailModal
   const { addLine } = useCart();
   const [duration, setDuration] = useState<Duration>("weekly");
   const [qty, setQty] = useState(1);
+
+  useLockBodyScroll(Boolean(item));
 
   if (!item) return null;
 

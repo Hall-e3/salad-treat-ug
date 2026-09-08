@@ -174,8 +174,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
       const deliveryStr =
         deliveryFee === 0
-          ? `Delivery Fee: FREE (${selectedZone.name})`
-          : `Delivery Fee: UGX ${formatUGX(deliveryFee)} (${selectedZone.name})`;
+          ? "Delivery Fee: FREE (Monthly Plan)"
+          : `Delivery Fee: UGX ${formatUGX(deliveryFee)}`;
 
       const message = [
         "*NEW SALAD TREAT ORDER*",
@@ -183,11 +183,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
         itemLines || "(No items selected)",
         "--------------------------------",
         `Subtotal: UGX ${formatUGX(itemsSubtotal)}`,
+        `Delivery Zone: ${selectedZone.name}`,
         deliveryStr,
         `*TOTAL AMOUNT: UGX ${formatUGX(grandTotal)}*`,
         "--------------------------------",
         `Customer Name: ${name || "Not specified"}`,
-        `Location/Address: ${location || "Not specified"} (${selectedZone.name})`,
+        `Location/Address: ${location || "Not specified"}`,
         `Payment Preference: ${paymentMethod}`,
         notes ? `Order Notes: ${notes}` : "",
         "--------------------------------",

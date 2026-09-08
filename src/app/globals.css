@@ -36,8 +36,8 @@
     box-sizing: border-box;
   }
 
-  /* Unsized media never busts layout; Tailwind h-*/w-* utilities (in @layer
-     utilities) still win over this base-layer default per cascade order. */
+  /* Unsized media never busts layout; Tailwind's h- and w- utilities (in
+     the utilities layer) still win over this base-layer default. */
   img, video, canvas, svg {
     max-width: 100%;
     height: auto;

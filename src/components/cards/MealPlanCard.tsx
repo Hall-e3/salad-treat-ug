@@ -123,7 +123,7 @@ export default function MealPlanCard({ item, onOpenModal }: MealPlanCardProps) {
       </div>
 
       {/* Card Footer */}
-      <div className="p-5 sm:p-6 pt-0 border-t border-bone/10 mt-4 flex items-center justify-between gap-2 sm:gap-3 flex-wrap sm:flex-nowrap">
+      <div className="px-5 sm:px-6 pt-5 sm:pt-6 pb-6 sm:pb-7 border-t border-bone/10 mt-4 flex items-center justify-between gap-2 sm:gap-3 flex-wrap sm:flex-nowrap">
         <div className="min-w-0">
           <AppText variant="caption" color="inverse" className="opacity-50 uppercase block">
             Price

@@ -95,7 +95,7 @@ export default function HeaderNav() {
               className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
               priority
             />
-            <span>Salad Treat</span>
+            <span className="hidden sm:inline">Salad Treat</span>
           </a>
 
           {/* Desktop Navigation */}

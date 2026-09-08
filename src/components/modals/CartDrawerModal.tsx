@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useCart } from "@/lib/cart";
+import { useLockBodyScroll } from "@/lib/useLockBodyScroll";
 import { formatUGX, deliveryZones } from "@/lib/menu-data";
 import {
   AppText,
@@ -39,6 +40,8 @@ export default function CartDrawerModal() {
     grandTotal,
     whatsappHref,
   } = useCart();
+
+  useLockBodyScroll(isOpen);
 
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
