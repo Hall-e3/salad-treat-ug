@@ -17,6 +17,7 @@ interface ButtonProps {
   isLoading?: boolean;
   className?: string;
   bgColor?: string;
+  noTruncate?: boolean;
 }
 
 const variantClasses: Record<Variant, string> = {
@@ -46,9 +47,9 @@ const variantClasses: Record<Variant, string> = {
 };
 
 const sizeClasses: Record<Size, string> = {
-  sm: "h-9 px-4 text-xs rounded-full",
-  md: "h-11 px-5 text-sm rounded-full",
-  lg: "h-13 px-7 text-base rounded-full",
+  sm: "min-h-9 px-4 py-1.5 text-xs rounded-full",
+  md: "min-h-11 px-5 py-2 text-sm rounded-full",
+  lg: "min-h-13 px-7 py-2.5 text-base rounded-full",
 };
 
 export default function Button({

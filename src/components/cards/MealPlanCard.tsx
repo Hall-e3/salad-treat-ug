@@ -128,7 +128,7 @@ export default function MealPlanCard({ item, onOpenModal }: MealPlanCardProps) {
           <AppText variant="caption" color="inverse" className="opacity-50 uppercase block">
             Price
           </AppText>
-          <AppText variant="heading-md" color="zest" className="font-display whitespace-nowrap">
+          <AppText variant="heading-lg" color="zest" className="font-display whitespace-nowrap">
             UGX {formatUGX(price)}
             <span className="ml-1 text-xs font-normal text-bone/50">
               /{duration === "weekly" ? "wk" : "mo"}
