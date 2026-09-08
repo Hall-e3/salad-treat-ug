@@ -11,8 +11,8 @@ export default function Footer() {
             <Image
               src="/logo.png"
               alt="Salad Treat Logo"
-              width={40}
-              height={40}
+              width={237}
+              height={188}
               className="h-10 w-auto object-contain"
             />
             <span>Salad Treat</span>

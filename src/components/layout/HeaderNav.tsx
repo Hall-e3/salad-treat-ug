@@ -90,8 +90,8 @@ export default function HeaderNav() {
             <Image
               src="/logo.png"
               alt="Salad Treat Logo"
-              width={36}
-              height={36}
+              width={237}
+              height={188}
               className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
               priority
             />
