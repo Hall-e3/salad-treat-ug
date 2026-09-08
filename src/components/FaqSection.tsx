@@ -10,8 +10,8 @@ export function FaqSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-basil py-14 sm:py-20 text-bone border-t border-bone/10">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6">
+    <section id="faq" className="bg-basil py-14 sm:py-20 lg:py-24 text-bone border-t border-bone/10">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-14 min-w-0">
           <span className="font-display text-base sm:text-lg italic text-zest flex items-center justify-center gap-1.5">
             <QuestionMarkCircleIcon className="h-5 w-5 text-zest shrink-0" />
@@ -46,7 +46,7 @@ export function FaqSection() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-0 text-sm text-bone/75 leading-relaxed border-t border-bone/10 mt-2 pt-4">
+                  <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-4 text-sm text-bone/75 leading-relaxed border-t border-bone/10 mt-2 break-words">
                     {faq.a}
                   </div>
                 )}

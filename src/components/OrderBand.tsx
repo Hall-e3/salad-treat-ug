@@ -74,7 +74,7 @@ export function OrderBand() {
         </div>
 
         {/* Interactive Delivery Zone Lookup & Store Operational Info */}
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 text-bone border-t border-bone/10">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24 text-bone border-t border-bone/10">
           <div className="grid gap-10 lg:grid-cols-2 items-center min-w-0">
             {/* Operational Details */}
             <div className="space-y-8 min-w-0">

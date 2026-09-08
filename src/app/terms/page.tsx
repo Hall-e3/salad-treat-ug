@@ -33,7 +33,7 @@ export default function TermsPage() {
         </section>
 
         {/* Content Container */}
-        <section className="mx-auto max-w-4xl px-6 py-12 sm:py-16">
+        <section className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="rounded-3xl bg-white p-6 sm:p-10 shadow-lg border border-line space-y-8 text-xs sm:text-sm text-charcoal/80 leading-relaxed">
             <div>
               <h2 className="font-display text-xl text-basil font-bold mb-2">

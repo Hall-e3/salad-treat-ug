@@ -22,7 +22,7 @@ export default function HeroSection() {
         <CherryTomatoes className="h-full w-full" />
       </div>
 
-      <div className="relative mx-auto grid max-w-6xl gap-10 lg:gap-12 px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:grid-cols-2 md:items-center md:py-24">
+      <div className="relative mx-auto grid max-w-6xl gap-10 lg:gap-12 px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24 md:grid-cols-2 md:items-center">
         <div className="min-w-0 max-w-full">
           <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-zest/40 bg-zest/10 px-3.5 py-1.5 text-[11px] sm:text-xs font-semibold text-zest uppercase tracking-wider">
             <SparklesIcon className="h-4 w-4 text-zest shrink-0" />

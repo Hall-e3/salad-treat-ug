@@ -73,16 +73,16 @@ export default function HeaderNav() {
     <>
       {/* Toast Notification Floating Banner */}
       {toast && (
-        <div className="fixed top-20 right-6 z-50 animate-bounce transition-all">
-          <div className="flex items-center gap-2.5 rounded-2xl bg-zest px-5 py-3 text-sm font-semibold text-basil shadow-2xl border border-basil/20">
-            <SparklesIcon className="h-5 w-5 text-basil" />
-            <span>{toast}</span>
+        <div className="fixed top-20 left-4 right-4 z-50 flex justify-center animate-bounce transition-all sm:left-auto sm:right-6 sm:justify-end">
+          <div className="flex max-w-full items-center gap-2.5 rounded-2xl bg-zest px-5 py-3 text-sm font-semibold text-basil shadow-2xl border border-basil/20">
+            <SparklesIcon className="h-5 w-5 text-basil shrink-0" />
+            <span className="truncate">{toast}</span>
           </div>
         </div>
       )}
 
       <header className="sticky top-0 z-40 border-b border-white/10 bg-basil/95 backdrop-blur-md transition-all">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
           <a
             href="/#top"
             className="flex items-center gap-2.5 font-display text-2xl italic tracking-wide text-bone group cursor-pointer"
@@ -197,7 +197,7 @@ export default function HeaderNav() {
 
         {/* Mobile Navigation Dropdown Drawer */}
         {mobileOpen && (
-          <div className="lg:hidden border-t border-white/10 bg-[#122318] px-6 py-5 space-y-4">
+          <div className="lg:hidden border-t border-white/10 bg-[#122318] px-4 sm:px-6 py-5 space-y-4">
             <p className="text-xs font-bold uppercase tracking-wider text-zest">
               Menu &amp; Services
             </p>

@@ -5,13 +5,13 @@ export function Testimonials() {
   const reviews = testimonialsData;
 
   return (
-    <section className="bg-herb-white py-20 text-charcoal border-t border-line">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="text-center max-w-2xl mx-auto">
-          <span className="font-display text-lg italic text-zest-deep">
+    <section className="bg-herb-white py-14 sm:py-20 lg:py-24 text-charcoal border-t border-line">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 min-w-0">
+        <div className="text-center max-w-2xl mx-auto min-w-0">
+          <span className="font-display text-base sm:text-lg italic text-zest-deep">
             Loved Across Kampala
           </span>
-          <h2 className="mt-2 font-display text-4xl leading-tight md:text-5xl">
+          <h2 className="mt-2 font-display text-3xl sm:text-4xl md:text-5xl leading-tight break-words">
             What Our Subscribers Say
           </h2>
           <p className="mt-4 text-charcoal/70 text-sm md:text-base">

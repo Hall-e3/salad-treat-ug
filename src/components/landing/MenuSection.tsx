@@ -63,7 +63,7 @@ export default function MenuSection() {
 
   return (
     <>
-      <section id="menu" className="bg-basil py-16 sm:py-24 text-bone">
+      <section id="menu" className="bg-basil py-14 sm:py-20 lg:py-24 text-bone">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">

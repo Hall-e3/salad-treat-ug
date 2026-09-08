@@ -194,7 +194,7 @@ export default function CartDrawerModal() {
               leftIcon={<MapPinIcon className="h-4 w-4 text-zest-deep" />}
             />
 
-            <div className="grid grid-cols-2 gap-2.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               <TextInput
                 placeholder="Full Name *"
                 value={name}
@@ -211,7 +211,7 @@ export default function CartDrawerModal() {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-2.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               <SelectInput
                 value={paymentMethod}
                 onChange={(e) => setPaymentMethod(e.target.value)}

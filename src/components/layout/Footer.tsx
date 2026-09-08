@@ -5,7 +5,7 @@ import AppText from "@/components/ui/AppText";
 export default function Footer() {
   return (
     <footer className="bg-basil-deep text-bone py-16 border-t border-bone/10">
-      <div className="mx-auto max-w-6xl px-6 grid gap-10 md:grid-cols-4">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-2 space-y-4">
           <div className="flex items-center gap-2.5 font-display text-2xl italic tracking-wide text-bone">
             <Image
@@ -131,7 +131,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-6xl px-6 mt-12 pt-6 border-t border-bone/10 text-center text-xs text-bone/40">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-bone/10 text-center text-xs text-bone/40">
         © {new Date().getFullYear()} Salad Treat. All rights reserved. Crafted with fresh ingredients in Kampala.
       </div>
     </footer>
