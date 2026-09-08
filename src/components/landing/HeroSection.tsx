@@ -61,24 +61,24 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3.5 sm:gap-4 w-full">
-            <a href="#menu" className="cursor-pointer w-full sm:w-auto">
+          <div className="mt-8 flex flex-col sm:flex-row md:flex-col lg:flex-row flex-wrap items-stretch sm:items-center md:items-stretch lg:items-center gap-3 sm:gap-3.5 w-full">
+            <a href="#menu" className="cursor-pointer w-full sm:w-auto md:w-full lg:w-auto">
               <Button
                 text="Explore Meal Plans & Menu"
                 variant="filled"
-                size="lg"
+                size="md"
                 noTruncate
-                className="w-full sm:w-auto justify-center"
+                className="w-full sm:w-auto md:w-full lg:w-auto justify-center"
               />
             </a>
-            <a href="#builder" className="cursor-pointer w-full sm:w-auto">
+            <a href="#builder" className="cursor-pointer w-full sm:w-auto md:w-full lg:w-auto">
               <Button
                 text="Custom Bowl Builder"
                 variant="dark"
-                size="lg"
+                size="md"
                 noTruncate
                 leftIcon={<AdjustmentsHorizontalIcon className="h-4 w-4 text-bone" />}
-                className="w-full sm:w-auto justify-center"
+                className="w-full sm:w-auto md:w-full lg:w-auto justify-center"
               />
             </a>
           </div>
