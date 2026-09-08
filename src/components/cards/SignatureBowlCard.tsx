@@ -95,12 +95,12 @@ export default function SignatureBowlCard({ item, onOpenModal }: SignatureBowlCa
       </div>
 
       {/* Card Footer */}
-      <div className="px-5 sm:px-6 pt-5 sm:pt-6 pb-6 sm:pb-7 border-t border-bone/10 mt-4 flex items-center justify-between gap-2 sm:gap-3 flex-wrap sm:flex-nowrap">
-        <div className="min-w-0">
+      <div className="px-5 sm:px-6 pt-5 sm:pt-6 pb-6 sm:pb-7 border-t border-bone/10 mt-4 flex items-center justify-between gap-2 sm:gap-3 flex-wrap">
+        <div>
           <AppText variant="caption" color="inverse" className="opacity-50 uppercase block">
             Price
           </AppText>
-          <AppText variant="heading-lg" color="zest" className="font-display truncate">
+          <AppText variant="heading-lg" color="zest" className="font-display whitespace-nowrap">
             UGX {formatUGX(item.price)}
           </AppText>
         </div>

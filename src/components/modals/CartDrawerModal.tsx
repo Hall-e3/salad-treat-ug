@@ -124,6 +124,11 @@ export default function CartDrawerModal() {
             <EmptyState
               title="Your cart is empty"
               description="Explore our meal plans, signature bowls, or customize your own salad bowl to get started."
+              actionText="Browse the Menu"
+              onAction={() => {
+                closeCart();
+                document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="mt-12 bg-transparent border-none"
             />
           ) : (

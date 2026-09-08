@@ -22,6 +22,14 @@ export function OrderBand() {
   const currentZone =
     deliveryZones.find((z) => z.id === activeZoneId) || deliveryZones[0];
 
+  const handleCheckoutClick = () => {
+    if (totalItems === 0) {
+      document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+    openCart();
+  };
+
   const handleSelectZone = (zoneId: string) => {
     setActiveZoneId(zoneId);
     setSelectedZoneId(zoneId);
@@ -60,7 +68,7 @@ export function OrderBand() {
             </p>
 
             <button
-              onClick={openCart}
+              onClick={handleCheckoutClick}
               className="mt-6 sm:mt-8 flex items-center gap-2 rounded-full bg-zest px-7 sm:px-9 py-3.5 sm:py-4 text-xs sm:text-sm font-bold text-basil transition-all transform hover:-translate-y-0.5 hover:bg-zest-deep shadow-xl shadow-zest/20 cursor-pointer"
             >
               <ShoppingBagIcon className="h-5 w-5 text-basil shrink-0" />
@@ -149,10 +157,10 @@ export function OrderBand() {
             </div>
 
             <button
-              onClick={openCart}
+              onClick={handleCheckoutClick}
               className="mt-6 w-full rounded-full bg-zest py-3.5 text-sm font-bold text-basil transition-all hover:bg-zest-deep shadow-md cursor-pointer"
             >
-              Set Location & Checkout
+              {totalItems > 0 ? "Set Location & Checkout" : "Browse Menu to Get Started"}
             </button>
           </div>
         </div>
