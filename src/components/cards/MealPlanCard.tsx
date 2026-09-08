@@ -123,17 +123,19 @@ export default function MealPlanCard({ item, onOpenModal }: MealPlanCardProps) {
       </div>
 
       {/* Card Footer */}
-      <div className="px-5 sm:px-6 pt-5 sm:pt-6 pb-6 sm:pb-7 border-t border-bone/10 mt-4 flex items-center justify-between gap-2 sm:gap-3 flex-wrap">
+      <div className="px-5 pt-5 sm:pt-6 pb-6 sm:pb-7 border-t border-bone/10 mt-4 flex items-center justify-between gap-2 flex-wrap">
         <div>
-          <AppText variant="caption" color="inverse" className="opacity-50 uppercase block">
-            Price
-          </AppText>
-          <AppText variant="heading-lg" color="zest" className="font-display whitespace-nowrap">
-            UGX {formatUGX(price)}
-            <span className="ml-1 text-xs font-normal text-bone/50">
-              /{duration === "weekly" ? "wk" : "mo"}
+          <div className="flex items-center gap-1.5">
+            <AppText variant="caption" color="inverse" className="opacity-50 uppercase">
+              Price
+            </AppText>
+            <span className="text-[10px] font-semibold text-bone/40">
+              /{duration === "weekly" ? "week" : "month"}
             </span>
-          </AppText>
+          </div>
+          <p className="font-display font-semibold text-lg md:text-xl leading-[1.25] text-zest whitespace-nowrap">
+            UGX {formatUGX(price)}
+          </p>
         </div>
 
         <Button
