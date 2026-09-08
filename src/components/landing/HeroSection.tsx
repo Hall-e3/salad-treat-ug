@@ -61,7 +61,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
+          <div className="mt-8 flex flex-wrap items-center gap-3.5 sm:gap-4 w-full">
             <a href="#menu" className="cursor-pointer w-full sm:w-auto">
               <Button
                 text="Explore Meal Plans & Menu"

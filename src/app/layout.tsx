@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { CartProvider } from "@/lib/cart";
 import "./globals.css";
@@ -87,6 +87,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://saladtreat.ug",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#16241c",
 };
 
 export default function RootLayout({

@@ -49,8 +49,8 @@ export function OrderBand() {
           alt="A Salad Treat delivery rider ready to head out with a fresh order in Kampala"
           fill
           sizes="100vw"
+          loading="lazy"
           className="object-cover opacity-90 transition-opacity duration-300"
-          priority
         />
         {/* Soft vignette gradient so text stays readable while keeping the delivery guy sharp and clear */}
         <div className="absolute inset-0 bg-gradient-to-t from-basil-deep via-basil-deep/50 to-basil-deep/15" />
