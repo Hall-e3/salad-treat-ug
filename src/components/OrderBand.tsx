@@ -57,7 +57,7 @@ export function OrderBand() {
       {/* Visual Header Image Banner */}
       <div className="relative h-[440px] w-full md:h-[500px] bg-basil-deep">
         <Image
-          src="/photos/delivery-rider.png"
+          src="/photos/delivery-rider.jpg"
           alt="A Salad Treat delivery rider ready to head out with a fresh order in Kampala"
           fill
           sizes="100vw"

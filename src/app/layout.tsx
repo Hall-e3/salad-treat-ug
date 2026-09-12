@@ -54,7 +54,7 @@ export const metadata: Metadata = {
       "Fresh, portion-controlled, nutrient-dense salad bowls delivered to your door in Kampala. Subscriptions & custom bowls available.",
     images: [
       {
-        url: "/photos/kampala-crunch-bowl.png",
+        url: "/photos/kampala-crunch-bowl.jpg",
         width: 1200,
         height: 630,
         alt: "Salad Treat Fresh Signature Bowl Kampala",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "Salad Treat | Fresh Salad Bowls & Meal Subscriptions Kampala",
     description:
       "Enjoy the taste of eating right. Fresh salad bowls delivered daily across Kampala, Monday to Saturday.",
-    images: ["/photos/kampala-crunch-bowl.png"],
+    images: ["/photos/kampala-crunch-bowl.jpg"],
   },
   robots: {
     index: true,

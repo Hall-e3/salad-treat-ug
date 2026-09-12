@@ -15,7 +15,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "FoodEstablishment",
     "name": "Salad Treat Kampala",
-    "image": "https://saladtreat.ug/photos/kampala-crunch-bowl.png",
+    "image": "https://saladtreat.ug/photos/kampala-crunch-bowl.jpg",
     "@id": "https://saladtreat.ug",
     "url": "https://saladtreat.ug",
     "telephone": "+256752182379",

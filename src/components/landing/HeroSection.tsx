@@ -13,7 +13,7 @@ import HeroImageSlideshow from "./HeroImageSlideshow";
 
 export default function HeroSection() {
   return (
-    <section id="top" className="relative overflow-hidden bg-basil text-bone">
+    <section id="top" className="relative overflow-hidden bg-basil text-bone min-h-dvh flex items-center">
       {/* Background Video Slideshow Player */}
       <HeroVideoSlideshow />
 

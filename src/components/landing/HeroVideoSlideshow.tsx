@@ -35,7 +35,7 @@ export default function HeroVideoSlideshow() {
         preload="auto"
         onEnded={handleEnded}
         className="absolute inset-0 h-full w-full object-cover opacity-85 transition-opacity duration-1000"
-        poster="/photos/delivery-rider.png"
+        poster="/photos/delivery-rider.jpg"
       >
         <source src={backgroundVideos[currentIndex]} type="video/mp4" />
       </video>

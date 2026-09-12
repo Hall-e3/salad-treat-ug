@@ -80,7 +80,7 @@ export function CustomBowlBuilder() {
       name: bowlTitle,
       unitPrice: totalPrice,
       details,
-      image: "/photos/kampala-crunch-bowl.png",
+      image: "/photos/kampala-crunch-bowl.jpg",
     });
   }, [addLine, customName, selectedBase, selectedProtein, selectedToppings, selectedDressing, totalPrice]);
 
