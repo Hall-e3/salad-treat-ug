@@ -11,6 +11,8 @@ import {
   ShoppingBagIcon,
   MapPinIcon,
   TruckIcon,
+  PauseCircleIcon,
+  BuildingOffice2Icon,
 } from "@heroicons/react/24/outline";
 
 import { SelectInput } from "@/components/ui";
@@ -113,6 +115,24 @@ export function OrderBand() {
                   </p>
                   <p className="mt-2 text-xs sm:text-sm text-bone/80">MTN Mobile Money</p>
                   <p className="text-xs sm:text-sm text-bone/80">Airtel Money · Cash · Bank</p>
+                </div>
+
+                <div>
+                  <p className="font-display text-base sm:text-lg italic text-zest flex items-center gap-1.5">
+                    <PauseCircleIcon className="h-4 w-4 shrink-0" /> Pause Anytime
+                  </p>
+                  <p className="mt-2 text-xs sm:text-sm text-bone/80 leading-relaxed">
+                    Out of town? Pause or adjust delivery days with 24 hours&rsquo; notice via WhatsApp &mdash; no days lost.
+                  </p>
+                </div>
+
+                <div>
+                  <p className="font-display text-base sm:text-lg italic text-zest flex items-center gap-1.5">
+                    <BuildingOffice2Icon className="h-4 w-4 shrink-0" /> Corporate & Bulk Orders
+                  </p>
+                  <p className="mt-2 text-xs sm:text-sm text-bone/80 leading-relaxed">
+                    Office catering across Nakasero, Kololo, Naguru &amp; Ntinda, with discounts on orders above 10 bowls.
+                  </p>
                 </div>
               </div>
             </div>

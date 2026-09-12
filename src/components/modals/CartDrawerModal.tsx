@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import { useCart } from "@/lib/cart";
 import { useLockBodyScroll } from "@/lib/useLockBodyScroll";
+import { usePersistedState } from "@/lib/usePersistedState";
 import { formatUGX, deliveryZones } from "@/lib/menu-data";
 import {
   AppText,
@@ -43,10 +43,39 @@ export default function CartDrawerModal() {
 
   useLockBodyScroll(isOpen);
 
-  const [name, setName] = useState("");
-  const [location, setLocation] = useState("");
-  const [notes, setNotes] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState("MTN Mobile Money");
+  const [checkoutDraft, setCheckoutDraft] = usePersistedState("salad-treat-checkout-draft-v1", {
+    name: "",
+    location: "",
+    notes: "",
+    paymentMethod: "MTN Mobile Money",
+  });
+  const { name, location, notes, paymentMethod } = checkoutDraft;
+  const setName = (value: string) =>
+    setCheckoutDraft((draft) => ({ ...draft, name: value }));
+  const setLocation = (value: string) =>
+    setCheckoutDraft((draft) => ({ ...draft, location: value }));
+  const setNotes = (value: string) =>
+    setCheckoutDraft((draft) => ({ ...draft, notes: value }));
+  const setPaymentMethod = (value: string) =>
+    setCheckoutDraft((draft) => ({ ...draft, paymentMethod: value }));
+
+  const selectedZone =
+    deliveryZones.find((z) => z.id === selectedZoneId) || deliveryZones[0];
+
+  // The delivery zone is a general area, not a deliverable address — a street/
+  // office value that just repeats it (or one of its "/"-separated areas)
+  // gives the rider nothing to actually find.
+  const zoneNameParts = [
+    selectedZone.name,
+    ...selectedZone.name.split("/").map((part) => part.trim()),
+  ].map((part) => part.toLowerCase());
+  const trimmedLocation = location.trim();
+  const locationMatchesZone =
+    trimmedLocation.length > 0 &&
+    zoneNameParts.includes(trimmedLocation.toLowerCase());
+  const locationError = locationMatchesZone
+    ? "Enter your specific street, building, or office — not just the delivery zone."
+    : undefined;
 
   const zoneOptions = deliveryZones.map((z) => ({
     value: z.id,
@@ -61,6 +90,7 @@ export default function CartDrawerModal() {
   ];
 
   const handleCheckoutSubmit = () => {
+    if (locationMatchesZone) return;
     window.open(
       whatsappHref({ name, location, notes, paymentMethod }),
       "_blank"
@@ -200,6 +230,7 @@ export default function CartDrawerModal() {
               onChange={(e) => setSelectedZoneId(e.target.value)}
               options={zoneOptions}
               leftIcon={<MapPinIcon className="h-4 w-4 text-zest-deep" />}
+              selectClassName="shadow-none"
             />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -208,6 +239,7 @@ export default function CartDrawerModal() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 leftIcon={<UserIcon className="h-4 w-4 text-charcoal/40" />}
+                inputClassName="shadow-none"
                 required
               />
               <TextInput
@@ -215,6 +247,9 @@ export default function CartDrawerModal() {
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 leftIcon={<MapPinIcon className="h-4 w-4 text-charcoal/40" />}
+                state={locationError ? "error" : "default"}
+                hint={locationError}
+                inputClassName="shadow-none"
                 required
               />
             </div>
@@ -225,12 +260,14 @@ export default function CartDrawerModal() {
                 onChange={(e) => setPaymentMethod(e.target.value)}
                 options={paymentOptions}
                 leftIcon={<CreditCardIcon className="h-4 w-4 text-charcoal/40" />}
+                selectClassName="shadow-none"
               />
               <TextInput
                 placeholder="Notes (e.g. no onions)"
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
                 leftIcon={<DocumentTextIcon className="h-4 w-4 text-charcoal/40" />}
+                inputClassName="shadow-none"
               />
             </div>
 
@@ -261,6 +298,7 @@ export default function CartDrawerModal() {
               text="Send Order via WhatsApp"
               variant="filled"
               size="lg"
+              disabled={locationMatchesZone}
               className="w-full shadow-lg"
               leftIcon={<ChatBubbleLeftRightIcon className="h-5 w-5 text-basil" />}
             />

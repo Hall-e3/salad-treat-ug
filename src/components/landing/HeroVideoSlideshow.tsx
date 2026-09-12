@@ -39,9 +39,9 @@ export default function HeroVideoSlideshow() {
         <source src={backgroundVideos[currentIndex]} type="video/mp4" />
       </video>
 
-      {/* Light Gradient Overlay to keep hero text high-contrast while video remains clearly visible */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0d1c12]/80 via-[#0d1c12]/45 to-black/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0d1c12] via-transparent to-black/20" />
+      {/* Lighter gradient so the video reads clearly while hero text keeps enough contrast */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0d1c12]/60 via-[#0d1c12]/25 to-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0d1c12]/65 via-transparent to-black/10" />
 
       {/* Slideshow Progress Indicators */}
       <div className="absolute bottom-4 left-6 z-10 hidden sm:flex items-center gap-2 pointer-events-auto">

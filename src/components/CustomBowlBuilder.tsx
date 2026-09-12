@@ -1,46 +1,65 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback } from "react";
 import { customOptions, formatUGX, type CustomIngredient } from "@/lib/menu-data";
 import { useCart } from "@/lib/cart";
+import { usePersistedState } from "@/lib/usePersistedState";
 import {
   BeakerIcon,
   CheckCircleIcon,
   PlusIcon,
 } from "@heroicons/react/24/outline";
 
+const bases = customOptions.filter((o) => o.category === "base");
+const proteins = customOptions.filter((o) => o.category === "protein");
+const toppings = customOptions.filter((o) => o.category === "topping");
+const dressings = customOptions.filter((o) => o.category === "dressing");
+
+const defaultDraft = {
+  baseId: bases[0].id,
+  proteinId: proteins[0].id,
+  toppingIds: ["t1", "t2"] as string[],
+  dressingId: dressings[0].id,
+  customName: "",
+};
+
 export function CustomBowlBuilder() {
   const { addLine } = useCart();
 
-  const [selectedBase, setSelectedBase] = useState<CustomIngredient>(
-    customOptions.find((o) => o.category === "base")!
+  // Persisted so a mid-build selection survives the WhatsApp app-switch on
+  // mobile, which can get the tab killed and reloaded on return.
+  const [draft, setDraft] = usePersistedState(
+    "salad-treat-custom-bowl-draft-v1",
+    defaultDraft
   );
-  const [selectedProtein, setSelectedProtein] = useState<CustomIngredient>(
-    customOptions.find((o) => o.category === "protein")!
-  );
-  const [selectedToppings, setSelectedToppings] = useState<CustomIngredient[]>(
-    [
-      customOptions.find((o) => o.id === "t1")!,
-      customOptions.find((o) => o.id === "t2")!,
-    ]
-  );
-  const [selectedDressing, setSelectedDressing] = useState<CustomIngredient>(
-    customOptions.find((o) => o.category === "dressing")!
-  );
-  const [customName, setCustomName] = useState("");
 
-  const bases = customOptions.filter((o) => o.category === "base");
-  const proteins = customOptions.filter((o) => o.category === "protein");
-  const toppings = customOptions.filter((o) => o.category === "topping");
-  const dressings = customOptions.filter((o) => o.category === "dressing");
+  const selectedBase = bases.find((b) => b.id === draft.baseId) ?? bases[0];
+  const selectedProtein =
+    proteins.find((p) => p.id === draft.proteinId) ?? proteins[0];
+  const selectedToppings = draft.toppingIds
+    .map((id) => toppings.find((t) => t.id === id))
+    .filter((t): t is CustomIngredient => Boolean(t));
+  const selectedDressing =
+    dressings.find((d) => d.id === draft.dressingId) ?? dressings[0];
+  const customName = draft.customName;
+
+  const setSelectedBase = (base: CustomIngredient) =>
+    setDraft((d) => ({ ...d, baseId: base.id }));
+  const setSelectedProtein = (protein: CustomIngredient) =>
+    setDraft((d) => ({ ...d, proteinId: protein.id }));
+  const setSelectedDressing = (dressing: CustomIngredient) =>
+    setDraft((d) => ({ ...d, dressingId: dressing.id }));
+  const setCustomName = (value: string) =>
+    setDraft((d) => ({ ...d, customName: value }));
 
   const toggleTopping = (topping: CustomIngredient) => {
-    if (selectedToppings.some((t) => t.id === topping.id)) {
-      setSelectedToppings(selectedToppings.filter((t) => t.id !== topping.id));
-    } else {
-      if (selectedToppings.length >= 4) return; // max 4 toppings
-      setSelectedToppings([...selectedToppings, topping]);
-    }
+    setDraft((d) => {
+      if (d.toppingIds.includes(topping.id)) {
+        return { ...d, toppingIds: d.toppingIds.filter((id) => id !== topping.id) };
+      }
+      if (d.toppingIds.length >= 4) return d; // max 4 toppings
+      return { ...d, toppingIds: [...d.toppingIds, topping.id] };
+    });
   };
 
   const totalPrice =
