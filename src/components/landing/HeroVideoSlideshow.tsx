@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 
 const backgroundVideos = [
+  "/videos/enjoy-the-taste.mp4",
   "/videos/hero-prep.mp4",
   "/videos/bulk-orders.mp4",
   "/videos/chicken-sandwich.mp4",

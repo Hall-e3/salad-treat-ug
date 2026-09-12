@@ -8,6 +8,7 @@ import FaqSection from "@/components/landing/FaqSection";
 import { HiringBanner } from "@/components/HiringBanner";
 import Footer from "@/components/layout/Footer";
 import CartDrawerModal from "@/components/modals/CartDrawerModal";
+import AnnouncementModal from "@/components/modals/AnnouncementModal";
 
 export default function Home() {
   const jsonLd = {
@@ -58,6 +59,7 @@ export default function Home() {
       </main>
       <Footer />
       <CartDrawerModal />
+      <AnnouncementModal />
     </>
   );
 }

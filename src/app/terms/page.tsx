@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import HeaderNav from "@/components/layout/HeaderNav";
 import Footer from "@/components/layout/Footer";
 import CartDrawerModal from "@/components/modals/CartDrawerModal";
+import AnnouncementModal from "@/components/modals/AnnouncementModal";
 import { AppText } from "@/components/ui";
 import { ShieldCheckIcon, DocumentTextIcon, PhoneIcon, EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/outline";
 
@@ -135,6 +136,7 @@ export default function TermsPage() {
       </main>
       <Footer />
       <CartDrawerModal />
+      <AnnouncementModal />
     </>
   );
 }

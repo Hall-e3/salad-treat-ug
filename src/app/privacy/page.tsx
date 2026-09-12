@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import HeaderNav from "@/components/layout/HeaderNav";
 import Footer from "@/components/layout/Footer";
 import CartDrawerModal from "@/components/modals/CartDrawerModal";
+import AnnouncementModal from "@/components/modals/AnnouncementModal";
 import { ShieldCheckIcon, LockClosedIcon, PhoneIcon, EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/outline";
 
 export const metadata: Metadata = {
@@ -123,6 +124,7 @@ export default function PrivacyPage() {
       </main>
       <Footer />
       <CartDrawerModal />
+      <AnnouncementModal />
     </>
   );
 }
