@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   mealPlans,
   signatureBowls,
@@ -20,6 +20,27 @@ export default function MenuSection() {
   const [selectedModalItem, setSelectedModalItem] = useState<MenuItem | null>(
     null,
   );
+
+  // The #builder anchor (used by the Hero CTA) only exists once the "custom"
+  // tab is active — jump to that tab first so the link has somewhere to land.
+  useEffect(() => {
+    const jumpToBuilderIfLinked = () => {
+      if (window.location.hash === "#builder") {
+        setActiveCategory("custom");
+      }
+    };
+    jumpToBuilderIfLinked();
+    window.addEventListener("hashchange", jumpToBuilderIfLinked);
+    return () => window.removeEventListener("hashchange", jumpToBuilderIfLinked);
+  }, []);
+
+  useEffect(() => {
+    if (activeCategory === "custom" && window.location.hash === "#builder") {
+      requestAnimationFrame(() => {
+        document.getElementById("builder")?.scrollIntoView({ behavior: "smooth" });
+      });
+    }
+  }, [activeCategory]);
 
   const tabs = [
     {

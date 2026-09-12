@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Salad Treat Kampala",
   description:
     "Learn how Salad Treat protects your personal information, delivery addresses, and payment details in compliance with Uganda Data Protection regulations.",
+  alternates: {
+    canonical: "https://saladtreat.ug/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy | Salad Treat Kampala",
+    description:
+      "Learn how Salad Treat protects your personal information, delivery addresses, and payment details in compliance with Uganda Data Protection regulations.",
+    url: "https://saladtreat.ug/privacy",
+  },
 };
 
 export default function PrivacyPage() {

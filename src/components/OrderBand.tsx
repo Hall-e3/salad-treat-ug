@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { deliveryZones, formatUGX } from "@/lib/menu-data";
 import { useCart } from "@/lib/cart";
+import { buildWhatsAppLink } from "@/lib/whatsapp";
 import {
   ClockIcon,
   PhoneIcon,
@@ -13,7 +14,16 @@ import {
   TruckIcon,
   PauseCircleIcon,
   BuildingOffice2Icon,
+  ChatBubbleLeftRightIcon,
 } from "@heroicons/react/24/outline";
+
+const pauseRequestLink = buildWhatsAppLink(
+  "Hi Salad Treat! I'd like to pause my subscription — I'll be out of town. Please confirm you've received this 24-hour notice and let me know the next steps."
+);
+
+const corporateEnquiryLink = buildWhatsAppLink(
+  "Hi Salad Treat! I'm interested in corporate/bulk catering for my office. Could you share pricing and scheduling details for a team order?"
+);
 
 import { SelectInput } from "@/components/ui";
 
@@ -124,6 +134,15 @@ export function OrderBand() {
                   <p className="mt-2 text-xs sm:text-sm text-bone/80 leading-relaxed">
                     Out of town? Pause or adjust delivery days with 24 hours&rsquo; notice via WhatsApp &mdash; no days lost.
                   </p>
+                  <a
+                    href={pauseRequestLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-1.5 text-xs font-bold text-zest underline hover:text-zest-deep cursor-pointer"
+                  >
+                    <ChatBubbleLeftRightIcon className="h-3.5 w-3.5 shrink-0" />
+                    <span>Request a pause via WhatsApp</span>
+                  </a>
                 </div>
 
                 <div>
@@ -133,6 +152,15 @@ export function OrderBand() {
                   <p className="mt-2 text-xs sm:text-sm text-bone/80 leading-relaxed">
                     Office catering across Nakasero, Kololo, Naguru &amp; Ntinda, with discounts on orders above 10 bowls.
                   </p>
+                  <a
+                    href={corporateEnquiryLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-1.5 text-xs font-bold text-zest underline hover:text-zest-deep cursor-pointer"
+                  >
+                    <ChatBubbleLeftRightIcon className="h-3.5 w-3.5 shrink-0" />
+                    <span>Enquire via WhatsApp</span>
+                  </a>
                 </div>
               </div>
             </div>

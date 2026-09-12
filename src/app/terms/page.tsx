@@ -9,6 +9,15 @@ export const metadata: Metadata = {
   title: "Terms of Service | Salad Treat Kampala",
   description:
     "Read Salad Treat's Terms of Service regarding meal plan subscriptions, daily salad delivery across Kampala, order cut-offs, payment policies, and refunds.",
+  alternates: {
+    canonical: "https://saladtreat.ug/terms",
+  },
+  openGraph: {
+    title: "Terms of Service | Salad Treat Kampala",
+    description:
+      "Read Salad Treat's Terms of Service regarding meal plan subscriptions, daily salad delivery across Kampala, order cut-offs, payment policies, and refunds.",
+    url: "https://saladtreat.ug/terms",
+  },
 };
 
 export default function TermsPage() {
