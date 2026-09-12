@@ -10,6 +10,7 @@ import {
   type ReactNode,
 } from "react";
 import { formatUGX, deliveryZones } from "./menu-data";
+import { buildWhatsAppLink } from "./whatsapp";
 import type { CartLine, CartItemType } from "@/types";
 
 export type { CartLine, CartItemType };
@@ -42,7 +43,6 @@ type CartContextValue = {
 const CartContext = createContext<CartContextValue | null>(null);
 
 const STORAGE_KEY = "salad-treat-cart-v2";
-const WHATSAPP_NUMBER = "256752182379";
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [lines, setLines] = useState<CartLine[]>([]);
@@ -197,9 +197,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         .filter(Boolean)
         .join("\n");
 
-      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-        message
-      )}`;
+      return buildWhatsAppLink(message);
     },
     [lines, itemsSubtotal, deliveryFee, grandTotal, selectedZone]
   );

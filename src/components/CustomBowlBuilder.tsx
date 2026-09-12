@@ -68,7 +68,7 @@ export function CustomBowlBuilder() {
     selectedToppings.reduce((sum, t) => sum + t.price, 0) +
     selectedDressing.price;
 
-  const handleAddToCart = () => {
+  const handleAddToCart = useCallback(() => {
     const bowlTitle = customName.trim() || "My Custom Bowl";
     const details = `${selectedBase.name}, ${selectedProtein.name}, ${selectedToppings
       .map((t) => t.name)
@@ -82,7 +82,7 @@ export function CustomBowlBuilder() {
       details,
       image: "/photos/kampala-crunch-bowl.png",
     });
-  };
+  }, [addLine, customName, selectedBase, selectedProtein, selectedToppings, selectedDressing, totalPrice]);
 
   return (
     <div className="rounded-3xl border border-bone/20 bg-[#16271c] p-4 sm:p-6 md:p-10 shadow-2xl text-bone w-full max-w-full min-w-0">
